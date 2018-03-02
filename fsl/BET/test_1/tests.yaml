@@ -1,0 +1,9 @@
+config:
+ - in_file:  fixed.nii.gz
+ - out_file: fixed_BRAIN.nii.gz
+ - skull: True
+tests:
+ ".*BRAIN.*":
+  - checks:
+    - nifti:
+      - data_relative_max: 1e-4

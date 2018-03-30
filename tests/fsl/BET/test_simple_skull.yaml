@@ -1,0 +1,37 @@
+# yaml schema validator: https://github.com/23andMe/Yamale
+# but not active recently, not in debian
+# There is also a generic https://github.com/keleshev/schema which seems kinda
+# nice so we aren't limited by YAML per se. also in debian
+inputs:
+ - in_file: testds1/sub-1_T1w_5mm.nii.gz
+config:
+ - out_file: fixed_BRAIN.nii.gz
+ - skull: True
+# by default -- look for a directory matching the test name
+# but might be handy to be able to point to some common output
+# directory and just tune the assertions
+#outputs_path: commondir
+#
+# by default - exit_code 0, and all files match bit-to-bit
+#assertions:
+# exit_code: 0  # default
+# stdout:  # for any of those we might want somehow to be able to state that it is a regex?
+#          # so either provide exact single string entry here or list of
+#          # - regex:
+#          # - contains:
+#          # - endswith:
+#          # - empty
+#          # which probably could be just the same/similarly defined checks as on files
+#          # just applied to stdout/stderr
+# stderr:
+# files:
+#   ".*BRAIN.*nii.gz":
+#     # Here should go per "test" available/specified for that type of file
+#     neuroimage_generic:
+#      - data_relative_max: 1e-4
+#      - header_diff_ok:
+#        - scal...
+#     neuroimage_stats:  # just an example, although could be handy too
+#      - number_of_clusters: 1
+#   "*.json":
+#  -

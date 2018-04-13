@@ -85,9 +85,9 @@ spec = {
                 "deb_packages": ["fsl-core"],
                 # "pip_packages": []
                 "source_files": ["/etc/fsl/fsl.sh"],
-                #"defaults": {
-                #    "output_type": "NIFTI_GZ",
-                #},
+                "defaults": {
+                    "output_type": "NIFTI_GZ",
+                },
             },
             "preprocess": {
                 "%recurse": True,

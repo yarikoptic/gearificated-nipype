@@ -2,11 +2,13 @@
 # but not active recently, not in debian
 # There is also a generic https://github.com/keleshev/schema which seems kinda
 # nice so we aren't limited by YAML per se. also in debian
-inputs:
- - in_file: testds1/sub-1_T1w_5mm.nii.gz
+inputs:  # we could allow a list for a parametric matrix...?
+ # every input is in the form dataset/path.
+ #  Datasets are looked up in the hierarchy under inputs/ directories
+ in_file: testds1/sub-1_T1w_5mm.nii.gz
 config:
- - out_file: fixed_BRAIN.nii.gz
- - skull: True
+ out_file: fixed_BRAIN.nii.gz
+ skull: True
 # by default -- look for a directory matching the test name
 # but might be handy to be able to point to some common output
 # directory and just tune the assertions

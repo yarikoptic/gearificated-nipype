@@ -45,7 +45,8 @@ spec = {
     # point to what sub-items (refining/inheriting down)
     "nipype.interfaces": {
         # What classes to react to. might want a callable
-        "%include": lambda x: robust_issubclass(x, BaseInterface),
+        "%include": lambda x: robust_issubclass(x, BaseInterface) \
+                              and "base.core.CommandLine" not in str(x),
         "%params": {
             "deb_packages": ["python-nipype"],
         },

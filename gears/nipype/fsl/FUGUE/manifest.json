@@ -1,0 +1,225 @@
+{
+  "name": "nipype-interfaces-fsl-preprocess-fugue", 
+  "description": "", 
+  "author": "Yaroslav O. Halchenko", 
+  "maintainer": "Yaroslav O. Halchenko <debian@onerussian.com>", 
+  "license": "Other", 
+  "version": "0.0.2.nipype.1.0.2.1", 
+  "config": {
+    "args": {
+      "type": "string", 
+      "description": "Additional parameters to the command", 
+      "optional": true
+    }, 
+    "asym_se_time": {
+      "type": "number", 
+      "description": "set the fieldmap asymmetric spin echo time (sec)", 
+      "optional": true
+    }, 
+    "despike_2dfilter": {
+      "type": "boolean", 
+      "description": "apply a 2D de-spiking filter", 
+      "optional": true
+    }, 
+    "despike_threshold": {
+      "type": "number", 
+      "description": "specify the threshold for de-spiking (default=3.0)", 
+      "optional": true
+    }, 
+    "dwell_time": {
+      "type": "number", 
+      "description": "set the EPI dwell time per phase-encode line - same as echo spacing - (sec)", 
+      "optional": true
+    }, 
+    "dwell_to_asym_ratio": {
+      "type": "number", 
+      "description": "set the dwell to asym time ratio", 
+      "optional": true
+    }, 
+    "forward_warping": {
+      "type": "boolean", 
+      "description": "apply forward warping instead of unwarping", 
+      "optional": true
+    }, 
+    "fourier_order": {
+      "type": "integer", 
+      "description": "apply Fourier (sinusoidal) fitting of order N", 
+      "optional": true
+    }, 
+    "icorr": {
+      "type": "boolean", 
+      "description": "apply intensity correction to unwarping (pixel shift method only)", 
+      "optional": true
+    }, 
+    "icorr_only": {
+      "type": "boolean", 
+      "description": "apply intensity correction only", 
+      "optional": true
+    }, 
+    "median_2dfilter": {
+      "type": "boolean", 
+      "description": "apply 2D median filtering", 
+      "optional": true
+    }, 
+    "no_extend": {
+      "type": "boolean", 
+      "description": "do not apply rigid-body extrapolation to the fieldmap", 
+      "optional": true
+    }, 
+    "no_gap_fill": {
+      "type": "boolean", 
+      "description": "do not apply gap-filling measure to the fieldmap", 
+      "optional": true
+    }, 
+    "nokspace": {
+      "type": "boolean", 
+      "description": "do not use k-space forward warping", 
+      "optional": true
+    }, 
+    "output_type": {
+      "type": "string", 
+      "description": "FSL output type [default=NIFTI_GZ]", 
+      "default": "NIFTI_GZ", 
+      "optional": true, 
+      "enum": [
+        "NIFTI_PAIR", 
+        "NIFTI_PAIR_GZ", 
+        "NIFTI_GZ", 
+        "NIFTI"
+      ]
+    }, 
+    "pava": {
+      "type": "boolean", 
+      "description": "apply monotonic enforcement via PAVA", 
+      "optional": true
+    }, 
+    "phase_conjugate": {
+      "type": "boolean", 
+      "description": "apply phase conjugate method of unwarping", 
+      "optional": true
+    }, 
+    "poly_order": {
+      "type": "integer", 
+      "description": "apply polynomial fitting of order N", 
+      "optional": true
+    }, 
+    "save_fmap": {
+      "type": "boolean", 
+      "description": "write field map volume", 
+      "optional": true
+    }, 
+    "save_shift": {
+      "type": "boolean", 
+      "description": "write pixel shift volume", 
+      "optional": true
+    }, 
+    "save_unmasked_fmap": {
+      "type": "boolean", 
+      "description": "saves the unmasked fieldmap when using --savefmap", 
+      "optional": true
+    }, 
+    "save_unmasked_shift": {
+      "type": "boolean", 
+      "description": "saves the unmasked shiftmap when using --saveshift", 
+      "optional": true
+    }, 
+    "smooth2d": {
+      "type": "number", 
+      "description": "apply 2D Gaussian smoothing of sigma N (in mm)", 
+      "optional": true
+    }, 
+    "smooth3d": {
+      "type": "number", 
+      "description": "apply 3D Gaussian smoothing of sigma N (in mm)", 
+      "optional": true
+    }, 
+    "unwarp_direction": {
+      "type": "string", 
+      "description": "specifies direction of warping (default y) [default=x]", 
+      "default": "x", 
+      "optional": true, 
+      "enum": [
+        "x", 
+        "y", 
+        "z", 
+        "x-", 
+        "y-", 
+        "z-"
+      ]
+    }
+  }, 
+  "inputs": {
+    "fmap_in_file": {
+      "description": "filename for loading fieldmap (rad/s)", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "fmap_out_file": {
+      "description": "filename for saving fieldmap (rad/s)", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "in_file": {
+      "description": "filename of input volume", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "mask_file": {
+      "description": "filename for loading valid mask", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "phasemap_in_file": {
+      "description": "filename for input phase image", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "shift_in_file": {
+      "description": "filename for reading pixel shift volume", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "shift_out_file": {
+      "description": "filename for saving pixel shift volume", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "unwarped_file": {
+      "description": "apply unwarping and save as filename", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "warped_file": {
+      "description": "apply forward warping and save as filename", 
+      "optional": true, 
+      "base": "file"
+    }
+  }, 
+  "url": "http://nipype.readthedocs.io/en/1.0.2/interfaces/generated/interfaces.ants/registration.html", 
+  "source": "https://github.com/yarikoptic/gearificator", 
+  "custom": {
+    "gearificator": {
+      "interface": "nipype.interfaces.fsl.preprocess:FUGUE", 
+      "outputs": {
+        "fmap_out_file": {
+          "description": "fieldmap file"
+        }, 
+        "shift_out_file": {
+          "description": "voxel shift map file"
+        }, 
+        "unwarped_file": {
+          "description": "unwarped file"
+        }, 
+        "warped_file": {
+          "description": "forward warped file"
+        }
+      }, 
+      "category": "analysis"
+    }, 
+    "gear-builder": {
+      "image": "nipype-interfaces-fsl-preprocess-fugue:0.0.2.nipype.1.0.2.1"
+    }, 
+    "docker-image": "nipype-interfaces-fsl-preprocess-fugue:0.0.2.nipype.1.0.2.1"
+  }, 
+  "label": "FUGUE"
+}

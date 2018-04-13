@@ -1,0 +1,150 @@
+{
+  "name": "nipype-interfaces-dcm2nii-dcm2niix", 
+  "description": "Uses Chris Rorden's dcm2niix to convert dicom files", 
+  "author": "Yaroslav O. Halchenko", 
+  "maintainer": "Yaroslav O. Halchenko <debian@onerussian.com>", 
+  "license": "BSD-3-Clause", 
+  "version": "0.0.2.nipype.1.0.2.1", 
+  "config": {
+    "anon_bids": {
+      "type": "boolean", 
+      "description": "Anonymize BIDS", 
+      "optional": true
+    }, 
+    "args": {
+      "type": "string", 
+      "description": "Additional parameters to the command", 
+      "optional": true
+    }, 
+    "bids_format": {
+      "type": "boolean", 
+      "description": "Create a BIDS sidecar file [default=True]", 
+      "default": true, 
+      "optional": true
+    }, 
+    "comment": {
+      "type": "string", 
+      "description": "Comment stored as NIfTI aux_file", 
+      "optional": true
+    }, 
+    "compress": {
+      "type": "string", 
+      "description": "Gzip compress images - [y=pigz, i=internal, n=no, 3=no,3D] [default=y]", 
+      "default": "y", 
+      "optional": true, 
+      "enum": [
+        "y", 
+        "i", 
+        "n", 
+        "3"
+      ]
+    }, 
+    "compression": {
+      "type": "integer", 
+      "description": "Gz compression level (1=fastest, 9=smallest) [default=1]", 
+      "default": 1, 
+      "optional": true, 
+      "enum": [
+        1, 
+        2, 
+        3, 
+        4, 
+        5, 
+        6, 
+        7, 
+        8, 
+        9
+      ]
+    }, 
+    "crop": {
+      "type": "boolean", 
+      "description": "Crop 3D T1 acquisitions", 
+      "optional": true
+    }, 
+    "has_private": {
+      "type": "boolean", 
+      "description": "Flag if text notes include private patient details", 
+      "optional": true
+    }, 
+    "ignore_deriv": {
+      "type": "boolean", 
+      "description": "Ignore derived, localizer and 2D images", 
+      "optional": true
+    }, 
+    "merge_imgs": {
+      "type": "boolean", 
+      "description": "merge 2D slices from same series", 
+      "optional": true
+    }, 
+    "out_filename": {
+      "type": "string", 
+      "description": "Output filename template (%a=antenna (coil) number, %c=comments, %d=description, %e=echo number, %f=folder name, %i=ID of patient, %j=seriesInstanceUID, %k=studyInstanceUID, %m=manufacturer, %n=name of patient, %p=protocol, %s=series number, %t=time, %u=acquisition number, %v=vendor, %x=study ID; %z=sequence name)", 
+      "optional": true
+    }, 
+    "output_dir": {
+      "description": "Output directory [default=outputs/]", 
+      "default": "outputs/", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "philips_float": {
+      "type": "boolean", 
+      "description": "Philips precise float (not display) scaling", 
+      "optional": true
+    }, 
+    "single_file": {
+      "type": "boolean", 
+      "description": "Single file mode", 
+      "optional": true
+    }, 
+    "source_dir": {
+      "description": "Source dir", 
+      "base": "file", 
+      "optional": true
+    }, 
+    "verbose": {
+      "type": "boolean", 
+      "description": "Verbose output", 
+      "optional": true
+    }
+  }, 
+  "inputs": {
+    "series_numbers": {
+      "description": "Selectively convert by series number - can be used up to 16 times", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "source_names": {
+      "description": "Source names", 
+      "base": "file", 
+      "optional": true
+    }
+  }, 
+  "url": "http://nipype.readthedocs.io/en/1.0.2/interfaces/generated/interfaces.ants/registration.html", 
+  "source": "https://github.com/yarikoptic/gearificator", 
+  "custom": {
+    "gearificator": {
+      "interface": "nipype.interfaces.dcm2nii:Dcm2niix", 
+      "outputs": {
+        "bids": {
+          "description": "Bids"
+        }, 
+        "bvals": {
+          "description": "Bvals"
+        }, 
+        "bvecs": {
+          "description": "Bvecs"
+        }, 
+        "converted_files": {
+          "description": "Converted files"
+        }
+      }, 
+      "category": "analysis"
+    }, 
+    "gear-builder": {
+      "image": "nipype-interfaces-dcm2nii-dcm2niix:0.0.2.nipype.1.0.2.1"
+    }, 
+    "docker-image": "nipype-interfaces-dcm2nii-dcm2niix:0.0.2.nipype.1.0.2.1"
+  }, 
+  "label": "Dcm2niix"
+}

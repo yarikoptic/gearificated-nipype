@@ -74,16 +74,18 @@ spec = {
                         number_of_affine_iterations=[10000, 10000, 10000, 10000, 10000],
                     ),
                 }
-            }
+            },
         },
-
+        "ants.segmentation": {
+            "CorticalThickness": {}
+        },
         "fsl": {
             "%manifest": {
                 "license": "Other"
             },
             "%params": {
                 # None as the first to say that we need to override
-                "deb_packages": ["fsl-core"],
+                "deb_packages": ["fsl-core", "fsl-mni152-templates"],
                 # "pip_packages": []
                 "source_files": ["/etc/fsl/fsl.sh"],
                 "defaults": {

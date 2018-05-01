@@ -15,7 +15,7 @@ RUN apt-get update && \
 # TODO:  gearificator prepare-docker recipename_or_url
 # cons: would somewhat loose cached steps (pre-installation, etc)
 # For now -- entire manual template
-RUN eatmydata apt-get update && \
+RUN eatmydata apt-get update && echo "count 1" && \
     eatmydata apt-get install -y --no-install-recommends python-pip python-nipype
 
 # Download/Install gearificator suite
@@ -32,13 +32,12 @@ RUN mkdir -p ${FLYWHEEL}
 ENV LC_ALL C.UTF-8
 
 # Now we do this particular Gear specific installations
-RUN eatmydata apt-get install -y --no-install-recommends python-nipype fsl-core
+RUN eatmydata apt-get install -y --no-install-recommends python-nipype fsl-core fsl-mni152-templates
 RUN apt-get clean
 
     
 RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo "6"
 RUN pip install -e /srv/gearificator
-
 
 COPY run ${FLYWHEEL}/run
 COPY manifest.json ${FLYWHEEL}/manifest.json

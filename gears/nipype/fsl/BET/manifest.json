@@ -54,7 +54,6 @@
       "type": "string", 
       "description": "FSL output type [default=NIFTI_GZ]", 
       "default": "NIFTI_GZ", 
-      "optional": true, 
       "enum": [
         "NIFTI_PAIR", 
         "NIFTI_PAIR_GZ", 

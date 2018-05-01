@@ -9,8 +9,7 @@
     "anonymize": {
       "type": "boolean", 
       "description": "Remove identifying information [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "args": {
       "type": "string", 
@@ -20,26 +19,22 @@
     "collapse_folders": {
       "type": "boolean", 
       "description": "Collapse input folders [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "convert_all_pars": {
       "type": "boolean", 
       "description": "Convert every image in directory [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "date_in_filename": {
       "type": "boolean", 
       "description": "Date in filename [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "events_in_filename": {
       "type": "boolean", 
       "description": "Events (series/acq) in filename [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "gzip_output": {
       "type": "boolean", 
@@ -54,20 +49,17 @@
     "nii_output": {
       "type": "boolean", 
       "description": "Save as .nii - if no, create .hdr/.img pair [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "output_dir": {
       "description": "Output dir - if unspecified, source directory is used [default=outputs/]", 
       "default": "outputs/", 
-      "optional": true, 
       "base": "file"
     }, 
     "protocol_in_filename": {
       "type": "boolean", 
       "description": "Protocol in filename [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "reorient": {
       "type": "boolean", 

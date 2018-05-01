@@ -19,8 +19,7 @@
     "bids_format": {
       "type": "boolean", 
       "description": "Create a BIDS sidecar file [default=True]", 
-      "default": true, 
-      "optional": true
+      "default": true
     }, 
     "comment": {
       "type": "string", 
@@ -31,7 +30,6 @@
       "type": "string", 
       "description": "Gzip compress images - [y=pigz, i=internal, n=no, 3=no,3D] [default=y]", 
       "default": "y", 
-      "optional": true, 
       "enum": [
         "y", 
         "i", 
@@ -43,7 +41,6 @@
       "type": "integer", 
       "description": "Gz compression level (1=fastest, 9=smallest) [default=1]", 
       "default": 1, 
-      "optional": true, 
       "enum": [
         1, 
         2, 
@@ -84,7 +81,6 @@
     "output_dir": {
       "description": "Output directory [default=outputs/]", 
       "default": "outputs/", 
-      "optional": true, 
       "base": "file"
     }, 
     "philips_float": {

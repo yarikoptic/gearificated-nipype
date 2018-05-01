@@ -32,7 +32,7 @@ RUN mkdir -p ${FLYWHEEL}
 ENV LC_ALL C.UTF-8
 
 # Now we do this particular Gear specific installations
-RUN eatmydata apt-get install -y --no-install-recommends python-nipype mricron dcm2niix
+RUN eatmydata apt-get install -y --no-install-recommends python-nipype ants
 RUN apt-get clean
 
     

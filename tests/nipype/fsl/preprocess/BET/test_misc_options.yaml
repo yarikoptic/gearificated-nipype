@@ -1,0 +1,7 @@
+inputs:
+ in_file: testds1/sub-1_T1w_5mm.nii.gz
+config:
+ out_file: fixed_BRAIN.nii.gz
+ skull: True
+ mask: True
+ remove_eyes: True

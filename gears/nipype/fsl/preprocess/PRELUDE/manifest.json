@@ -1,0 +1,126 @@
+{
+  "name": "nipype-interfaces-fsl-preprocess-prelude", 
+  "description": "Use FSL prelude to do phase unwrapping", 
+  "author": "Yaroslav O. Halchenko", 
+  "maintainer": "Yaroslav O. Halchenko <debian@onerussian.com>", 
+  "license": "Other", 
+  "version": "0.0.2.nipype.1.0.2.1", 
+  "config": {
+    "args": {
+      "type": "string", 
+      "description": "Additional parameters to the command", 
+      "optional": true
+    }, 
+    "end": {
+      "type": "integer", 
+      "description": "final image number to process (default Inf)", 
+      "optional": true
+    }, 
+    "labelprocess2d": {
+      "type": "boolean", 
+      "description": "does label processing in 2D (slice at a time)", 
+      "optional": true
+    }, 
+    "num_partitions": {
+      "type": "integer", 
+      "description": "number of phase partitions to use", 
+      "optional": true
+    }, 
+    "output_type": {
+      "type": "string", 
+      "description": "FSL output type [default=NIFTI_GZ]", 
+      "default": "NIFTI_GZ", 
+      "enum": [
+        "NIFTI_PAIR", 
+        "NIFTI_PAIR_GZ", 
+        "NIFTI_GZ", 
+        "NIFTI"
+      ]
+    }, 
+    "process2d": {
+      "type": "boolean", 
+      "description": "does all processing in 2D (slice at a time)", 
+      "optional": true
+    }, 
+    "process3d": {
+      "type": "boolean", 
+      "description": "forces all processing to be full 3D", 
+      "optional": true
+    }, 
+    "removeramps": {
+      "type": "boolean", 
+      "description": "remove phase ramps during unwrapping", 
+      "optional": true
+    }, 
+    "start": {
+      "type": "integer", 
+      "description": "first image number to process (default 0)", 
+      "optional": true
+    }, 
+    "threshold": {
+      "type": "number", 
+      "description": "intensity threshold for masking", 
+      "optional": true
+    }
+  }, 
+  "inputs": {
+    "complex_phase_file": {
+      "description": "complex phase input volume", 
+      "base": "file", 
+      "optional": true
+    }, 
+    "label_file": {
+      "description": "saving the area labels output", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "magnitude_file": {
+      "description": "file containing magnitude image", 
+      "base": "file", 
+      "optional": true
+    }, 
+    "mask_file": {
+      "description": "filename of mask input volume", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "phase_file": {
+      "description": "raw phase file", 
+      "base": "file", 
+      "optional": true
+    }, 
+    "rawphase_file": {
+      "description": "saving the raw phase output", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "savemask_file": {
+      "description": "saving the mask volume", 
+      "optional": true, 
+      "base": "file"
+    }, 
+    "unwrapped_phase_file": {
+      "description": "file containing unwrapepd phase", 
+      "optional": true, 
+      "base": "file"
+    }
+  }, 
+  "url": "http://nipype.readthedocs.io/en/1.0.2/interfaces/generated/interfaces.ants/registration.html", 
+  "source": "https://github.com/yarikoptic/gearificator", 
+  "custom": {
+    "gearificator": {
+      "interface": "nipype.interfaces.fsl.preprocess:PRELUDE", 
+      "outputs": {
+        "unwrapped_phase_file": {
+          "description": "unwrapped phase file"
+        }
+      }, 
+      "category": "analysis"
+    }, 
+    "gear-builder": {
+      "image": "nipype-interfaces-fsl-preprocess-prelude:0.0.2.nipype.1.0.2.1"
+    }, 
+    "docker-image": "nipype-interfaces-fsl-preprocess-prelude:0.0.2.nipype.1.0.2.1"
+  }, 
+  "label": "PRELUDE"
+}

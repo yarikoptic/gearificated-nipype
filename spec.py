@@ -50,34 +50,43 @@ spec = {
         "%params": {
             "deb_packages": ["python-nipype"],
         },
-
-        "ants.registration": {
+        "ants": {
+            "%manifest": {
+                "license": "BSD-3-Clause"
+            },
             "%params": {
-                # None as the first to say that we need to override
                 "deb_packages": ["ants"],
+                "prepend_paths": ["/usr/lib/ants"],
             },
-            "ANTS": {
+            "registration": {
                 "%params": {
-                    "defaults": dict(
-                        transformation_model='SyN',
-                        # output_transform_prefix='/tmp/MY',
-                        dimension=3,
-                        metric=['CC'],
-                        metric_weight=[1.0],
-                        # following ones are somewhat too detailed...
-                        radius=[1],
-                        regularization='Gauss',
-                        regularization_gradient_field_sigma=3,
-                        regularization_deformation_field_sigma=0,
-                        # and for fun
-                        number_of_iterations=[50, 35, 15],
-                        number_of_affine_iterations=[10000, 10000, 10000, 10000, 10000],
-                    ),
-                }
+                    # None as the first to say that we need to override
+                    "deb_packages": ["ants"],
+                },
+                "ANTS": {
+                    "%params": {
+                        "defaults": dict(
+                            transformation_model='SyN',
+                            # output_transform_prefix='/tmp/MY',
+                            dimension=3,
+                            metric=['CC'],
+                            metric_weight=[1.0],
+                            # following ones are somewhat too detailed...
+                            radius=[1],
+                            regularization='Gauss',
+                            regularization_gradient_field_sigma=3,
+                            regularization_deformation_field_sigma=0,
+                            # and for fun
+                            number_of_iterations=[50, 35, 15],
+                            number_of_affine_iterations=[10000, 10000, 10000, 10000, 10000],
+                        ),
+                    }
+                },
             },
-        },
-        "ants.segmentation": {
-            "CorticalThickness": {}
+            "segmentation": {
+                "CorticalThickness": {},
+                "N4BiasFieldCorrection": {},
+            },
         },
         "fsl": {
             "%manifest": {

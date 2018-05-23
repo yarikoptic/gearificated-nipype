@@ -1,7 +1,7 @@
 {
   "name": "nipype-interfaces-fsl-preprocess-bet", 
   "label": "FSL BET (Brain Extraction Tool)", 
-  "description": "Use FSL BET command for skull stripping.", 
+  "description": "FSL BET command for skull stripping", 
   "author": "Yaroslav O. Halchenko", 
   "maintainer": "Yaroslav O. Halchenko <debian@onerussian.com>", 
   "license": "Other", 
@@ -169,8 +169,8 @@
       "suite": "nipype:fsl"
     }, 
     "gear-builder": {
-      "image": "nipype-interfaces-fsl-preprocess-bet:0.0.2.nipype.1.0.3.1"
+      "image": "gearificator/nipype-interfaces-fsl-preprocess-bet:0.0.2.nipype.1.0.3.1"
     }, 
-    "docker-image": "nipype-interfaces-fsl-preprocess-bet:0.0.2.nipype.1.0.3.1"
+    "docker-image": "gearificator/nipype-interfaces-fsl-preprocess-bet:0.0.2.nipype.1.0.3.1"
   }
 }

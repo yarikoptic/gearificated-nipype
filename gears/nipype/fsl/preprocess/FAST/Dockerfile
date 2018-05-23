@@ -21,7 +21,7 @@ RUN eatmydata apt-get update && echo "count 1" && \
 # Download/Install gearificator suite
 # TODO  install git if we do via git
 RUN eatmydata apt-get install -y git python-setuptools
-# TEMPMOVE RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo "6"
+# TEMPMOVE RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo 7
 # TEMPMOVE RUN pip install -e /srv/gearificator
 
 # Common to all gears settings
@@ -36,7 +36,7 @@ RUN eatmydata apt-get install -y --no-install-recommends python-nipype fsl-core 
 RUN apt-get clean
 
     
-RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo "6"
+RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo 7
 RUN pip install -e /srv/gearificator
 
 COPY run ${FLYWHEEL}/run

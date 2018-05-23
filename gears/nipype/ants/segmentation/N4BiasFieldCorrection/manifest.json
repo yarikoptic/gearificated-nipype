@@ -105,10 +105,13 @@
       }, 
       "category": "analysis"
     }, 
-    "gear-builder": {
-      "image": "nipype-interfaces-ants-segmentation-n4biasfieldcorrection:0.0.2.nipype.1.0.3.1"
+    "flywheel": {
+      "suite": "nipype:ants"
     }, 
-    "docker-image": "nipype-interfaces-ants-segmentation-n4biasfieldcorrection:0.0.2.nipype.1.0.3.1"
+    "gear-builder": {
+      "image": "gearificator/nipype-interfaces-ants-segmentation-n4biasfieldcorrection:0.0.2.nipype.1.0.3.1"
+    }, 
+    "docker-image": "gearificator/nipype-interfaces-ants-segmentation-n4biasfieldcorrection:0.0.2.nipype.1.0.3.1"
   }, 
   "label": "N4BiasFieldCorrection"
 }

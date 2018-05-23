@@ -1,0 +1,8 @@
+inputs:
+ in_files: testds1/sub-1_T1w_5mm.nii.gz
+config:
+ number_classes: 3
+ output_biasfield: True
+ img_type: 1
+ segments: True
+ probability_maps: True

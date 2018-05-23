@@ -59,10 +59,6 @@ spec = {
                 "prepend_paths": ["/usr/lib/ants"],
             },
             "registration": {
-                "%params": {
-                    # None as the first to say that we need to override
-                    "deb_packages": ["ants"],
-                },
                 "ANTS": {
                     "%params": {
                         "defaults": dict(
@@ -110,6 +106,13 @@ spec = {
                         # Just an example for override
                         "label": "FSL BET (Brain Extraction Tool)"
                     }
+                },
+                "FAST": {
+                    # "%params": {
+                    #     "defaults": dict(
+                    #         out_basename="../../output"
+                    #     )
+                    # }
                 },
                 # we could add fancy path selectors we could do smth like
                 # "{}.%manifest.label": {

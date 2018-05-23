@@ -1,0 +1,3 @@
+[submodule "exchanges/flywheel-io"]
+	path = exchanges/flywheel-io
+	url = http://github.com/flywheel-io/exchange

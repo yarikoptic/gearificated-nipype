@@ -84,6 +84,7 @@ spec = {
             "segmentation": {
                 "CorticalThickness": {},
                 "N4BiasFieldCorrection": {},
+                "Atropos": {},
             },
         },
         "fsl": {

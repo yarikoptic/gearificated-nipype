@@ -1,0 +1,8 @@
+#!/bin/sh
+# Just a simple runner for the gearificator'ed interface.
+#
+# All needed information should be specified via manifest.conf and config.json 
+
+set -eu
+export PATH=/usr/lib/ants:$PATH
+python -m gearificator "$@"

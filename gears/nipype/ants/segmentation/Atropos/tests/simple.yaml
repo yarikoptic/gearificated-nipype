@@ -1,0 +1,5 @@
+inputs:
+ intensity_images: testds1/sub-1_T1w_5mm.nii.gz
+ mask_image: testds1/sub-1_T1w_5mm_brainmask.nii.gz
+config:
+ number_of_tissue_classes: 2

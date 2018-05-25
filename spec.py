@@ -78,6 +78,8 @@ spec = {
                         ),
                     }
                 },
+                # TODO: handle TraitCompound
+                #"Registration": {},
             },
             "segmentation": {
                 "CorticalThickness": {},

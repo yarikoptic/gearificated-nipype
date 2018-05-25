@@ -152,7 +152,7 @@
       "category": "analysis"
     },
     "flywheel": {
-      "suite": "Nipype ANTS 2"
+      "suite": "ANTS 2"
     },
     "gear-builder": {
       "image": "gearificator/nipype-interfaces-ants-segmentation-atropos:0.0.2.nipype.1.0.3.1"

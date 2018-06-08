@@ -57,6 +57,9 @@ spec = {
             "%params": {
                 "deb_packages": ["ants"],
                 "prepend_paths": ["/usr/lib/ants"],
+                "envvars": {
+                    "ANTSPATH": "/usr/lib/ants"
+                }
             },
             "registration": {
                 "ANTS": {

@@ -82,6 +82,7 @@ spec = {
                 #"Registration": {},
             },
             "segmentation": {
+                "%recurse": True,
                 "CorticalThickness": {},
                 "N4BiasFieldCorrection": {},
                 "Atropos": {},

@@ -137,6 +137,9 @@ spec = {
         },
 
         "dcm2nii": {
+            "%manifest": {
+                "license": "BSD-3-Clause"
+            },
             # https://github.com/scitran-apps/dcm2niix does much more:
             #  - decompress DICOMs tar/zip balls
             #  - decompress internally compressed DICOMs before processing
@@ -147,9 +150,20 @@ spec = {
                 "defaults": {
                     # otherwise would place into current directory
                     # TODO: we might want "hardcode" instead of "defaults"
-                    "output_dir": "outputs/",
+                    # TODO: someone needs to create that directory since must exist!
+                    #"output_dir": "outputs/",
+                    "source_dir": "../input/",
                 }
             },
         },
+
+        "dipy": {
+            "%recurse": False,
+            "%params": {
+                # None as the first to say that we need to override
+                "deb_packages": ["python-dipy"],
+            },
+        },
+
     },
 }

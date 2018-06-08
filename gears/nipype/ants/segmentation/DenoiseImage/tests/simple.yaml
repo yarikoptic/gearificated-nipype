@@ -1,0 +1,6 @@
+inputs:
+ input_image: testds1/sub-1_T1w_5mm.nii.gz
+config:
+ dimension: 3
+ # speedup the test
+ shrink_factor: 5

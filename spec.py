@@ -89,6 +89,13 @@ spec = {
                 "CorticalThickness": {},
                 "N4BiasFieldCorrection": {},
                 "Atropos": {},
+                "DenoiseImage": {
+                    "%params": {
+                        "defaults": dict(
+                            dimension=3,
+                        )
+                    }
+                }
             },
         },
         "fsl": {

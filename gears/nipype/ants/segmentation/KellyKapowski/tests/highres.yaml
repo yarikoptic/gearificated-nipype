@@ -1,0 +1,2 @@
+inputs:
+ segmentation_image: ../gears/nipype/ants/segmentation/Atropos/tests/highres/sub-1_T1w_labeled.nii.gz

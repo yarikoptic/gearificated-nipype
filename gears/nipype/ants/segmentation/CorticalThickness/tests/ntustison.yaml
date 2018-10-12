@@ -1,0 +1,16 @@
+# uses/mimics https://github.com/ntustison/antsCorticalThicknessExample
+inputs:
+  anatomical_image: antsCorticalThicknessExample/IXI002-Guys-0828-T1_slice90.nii.gz
+  brain_template: antsCorticalThicknessExample/Template/template_slice80.nii.gz
+  brain_probability_mask: antsCorticalThicknessExample/Template/template_cerebrum_mask_slice80.nii.gz
+  # Following "upstream" way wouldn't work
+  #segmentation_priors: antsCorticalThicknessExample/Template/prior%d_slice80.nii.gz
+  # and we cannot use InputMultiPath array, so we would point only to a single prior
+  # but that is not good enough - we need to specify 4!  TODO?!
+  segmentation_priors: antsCorticalThicknessExample/Template/prior1_slice80.nii.gz
+  # Reusing brain_template from above.  Must be specified
+  t1_registration_template: antsCorticalThicknessExample/Template/template_slice80.nii.gz
+config:
+  dimension: 2
+  out_prefix: geartest
+

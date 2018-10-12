@@ -1,3 +1,6 @@
 [submodule "exchanges/flywheel-io"]
 	path = exchanges/flywheel-io
 	url = http://github.com/flywheel-io/exchange
+[submodule "inputs/antsBrainExtractionExample"]
+	path = inputs/antsBrainExtractionExample
+	url = https://github.com/ntustison/antsBrainExtractionExample

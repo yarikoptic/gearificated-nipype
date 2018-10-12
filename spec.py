@@ -88,7 +88,14 @@ spec = {
                 "%recurse": True,
                 "CorticalThickness": {},
                 "N4BiasFieldCorrection": {},
-                "Atropos": {},
+                "BrainExtraction": {},
+                "Atropos": {
+                    "%params": {
+                        "defaults": dict(
+                            initialization="KMeans",
+                        )
+                    }
+                },
                 "DenoiseImage": {
                     "%params": {
                         "defaults": dict(
@@ -134,6 +141,9 @@ spec = {
                 #    "FLIRT": " ....
                 # },
             },
+            "epi": {
+                "%recurse": True,
+            }
         },
 
         "dcm2nii": {

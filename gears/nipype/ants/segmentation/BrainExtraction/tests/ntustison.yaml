@@ -1,0 +1,8 @@
+# uses/mimics https://github.com/ntustison/antsBrainExtractionExample
+inputs:
+  anatomical_image: antsBrainExtractionExample/IXI002-Guys-0828-T1_slice90.nii.gz
+  brain_template: antsBrainExtractionExample/Template/T_template0_slice122.nii.gz
+  brain_probability_mask: antsBrainExtractionExample/Template/T_template0ProbabilityMask.nii.gz
+config:
+  dimension: 2
+

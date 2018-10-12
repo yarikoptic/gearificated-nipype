@@ -87,6 +87,7 @@ spec = {
             "segmentation": {
                 "%recurse": True,
                 "CorticalThickness": {},
+                "LaplacianThickness": {},
                 "N4BiasFieldCorrection": {},
                 "BrainExtraction": {},
                 "Atropos": {

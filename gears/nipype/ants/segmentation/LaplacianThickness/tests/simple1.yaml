@@ -1,0 +1,7 @@
+inputs:
+ input_gm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors2.nii.gz
+ input_wm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors3.nii.gz
+config:
+# TODO: needs this fix https://github.com/nipy/nipype/pull/2734
+#       and would not work otherwise one way or another :-(
+ output_image: gfoutput.nii.gz

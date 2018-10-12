@@ -4,3 +4,6 @@
 [submodule "inputs/antsBrainExtractionExample"]
 	path = inputs/antsBrainExtractionExample
 	url = https://github.com/ntustison/antsBrainExtractionExample
+[submodule "inputs/antsCorticalThicknessExample"]
+	path = inputs/antsCorticalThicknessExample
+	url = https://github.com/ntustison/antsCorticalThicknessExample

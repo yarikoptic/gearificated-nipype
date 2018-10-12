@@ -18,8 +18,8 @@
     },
     "initialization": {
       "type": "string",
-      "description": "Initialization [default=Random]",
-      "default": "Random",
+      "description": "Initialization [default=KMeans]",
+      "default": "KMeans",
       "enum": [
         "Random",
         "Otsu",

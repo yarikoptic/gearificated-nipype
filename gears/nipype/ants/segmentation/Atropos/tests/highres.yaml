@@ -1,0 +1,6 @@
+inputs:
+ intensity_images: testds1/sub-1_T1w.nii.gz
+ mask_image: testds1/sub-1_T1w_brain_mask.nii.gz
+config:
+ number_of_tissue_classes: 3
+ use_random_seed: False

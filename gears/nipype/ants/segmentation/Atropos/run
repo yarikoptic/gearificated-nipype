@@ -5,4 +5,5 @@
 
 set -eu
 export PATH=/usr/lib/ants:$PATH
+export ANTSPATH=/usr/lib/ants
 python -m gearificator "$@"

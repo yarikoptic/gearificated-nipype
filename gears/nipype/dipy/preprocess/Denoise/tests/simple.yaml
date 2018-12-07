@@ -1,0 +1,2 @@
+inputs:
+ in_file: dipy-data/small_25_float.nii.gz

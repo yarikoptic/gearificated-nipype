@@ -4,4 +4,5 @@ inputs:
 config:
 # TODO: needs this fix https://github.com/nipy/nipype/pull/2734
 #       and would not work otherwise one way or another :-(
+# DONE: fixed in 1.1.4
  output_image: gfoutput.nii.gz

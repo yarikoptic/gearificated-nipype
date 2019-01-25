@@ -1,0 +1,11 @@
+inputs:
+ input_gm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors2.nii.gz
+ input_wm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors3.nii.gz
+config:
+ smooth_param: 1
+ prior_thickness: 500
+ dT: 0.01
+ # sulcus prior by default is not "engaged"
+ sulcus_prior: 0
+ tolerance: 0.001
+ # This one should produce results identical to simple1, just different output filename

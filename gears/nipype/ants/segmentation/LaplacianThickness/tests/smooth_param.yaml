@@ -1,0 +1,6 @@
+inputs:
+ input_gm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors2.nii.gz
+ input_wm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors3.nii.gz
+config:
+ # this and defaults test should wait for ... to be released
+ smooth_param: 3

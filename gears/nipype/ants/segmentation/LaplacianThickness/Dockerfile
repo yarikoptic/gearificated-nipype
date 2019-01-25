@@ -1,26 +1,27 @@
-FROM neurodebian:stretch
+FROM neurodebian:stretch-non-free
 MAINTAINER Yaroslav O. Halchenko <debian@onerussian.com>
     
-# TODO: use snapshots for reproducible image!
-# Install additional APT mirror for NeuroDebian for better availability/resilience
-RUN echo deb http://neurodeb.pirsquared.org data main contrib non-free >> /etc/apt/sources.list.d/neurodebian.sources.list
-RUN echo deb http://neurodeb.pirsquared.org stretch main contrib non-free >> /etc/apt/sources.list.d/neurodebian.sources.list
+# Make image reproducible based on the date/state of things in Debian/NeuroDebian
+# land.
+# Time format yyyymmdd 
+RUN nd_freeze 20181221
 
 # To prevent interactive debconf during installations
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && \
-    apt-get install -y eatmydata
 
 # Make directory for flywheel spec (v0)
 # TODO:  gearificator prepare-docker recipename_or_url
 # cons: would somewhat loose cached steps (pre-installation, etc)
 # For now -- entire manual template
-RUN eatmydata apt-get update && echo "count 1" && \
-    eatmydata apt-get install -y --no-install-recommends python-pip python-nipype
+RUN apt-get update && echo "count 1" \
+    && apt-get install -y --no-install-recommends python-pip python-nipype \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Download/Install gearificator suite
 # TODO  install git if we do via git
-RUN eatmydata apt-get install -y git python-setuptools
+RUN apt-get update \ 
+    && apt-get install -y git python-setuptools \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # TEMPMOVE RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo 7
 # TEMPMOVE RUN pip install -e /srv/gearificator
 
@@ -32,12 +33,15 @@ RUN mkdir -p ${FLYWHEEL}
 ENV LC_ALL C.UTF-8
 
 # Now we do this particular Gear specific installations
-RUN eatmydata apt-get install -y --no-install-recommends python-nipype ants
-RUN apt-get clean
 
+RUN apt-get update \ 
+    && apt-get install -y --no-install-recommends python-nipype ants \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN pip install  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 RUN git clone git://github.com/yarikoptic/gearificator /srv/gearificator && echo 7
-RUN pip install -e /srv/gearificator
+RUN pip install -e /srv/gearificator && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY run ${FLYWHEEL}/run
 COPY manifest.json ${FLYWHEEL}/manifest.json

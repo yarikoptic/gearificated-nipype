@@ -1,0 +1,6 @@
+inputs:
+ input_gm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors2.nii.gz
+ input_wm: antsCorticalThicknessExample/ResultsT1Only/exampleBrainSegmentationPosteriors3.nii.gz
+config:
+ # this one to verify that it doesn't stick it into smooth_param which is positional before it
+ prior_thickness: 3
